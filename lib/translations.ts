@@ -2,7 +2,8 @@ export type Lang = "bn" | "en";
 
 export const translations = {
   bn: {
-    brand: "স্মার্ট কোচিং",
+    brand: "সমিকরণ কোচিং",
+    brandLogoAlt: "সমিকরণ কোচিং লোগো",
     navHome: "হোম",
     navAbout: "আমাদের সম্পর্কে",
     navTeachers: "শিক্ষকমণ্ডলী",
@@ -228,7 +229,8 @@ export const translations = {
     langEn: "English",
   },
   en: {
-    brand: "Smart Coaching",
+    brand: "Somikoron Coaching",
+    brandLogoAlt: "Somikoron Coaching logo",
     navHome: "Home",
     navAbout: "About",
     navTeachers: "Teachers",

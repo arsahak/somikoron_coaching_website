@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Somikoron Coaching">
+  <rect width="64" height="64" rx="14" fill="url(#somikoron-grad)"/>
+  <defs>
+    <linearGradient id="somikoron-grad" x1="10" y1="6" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#4F46E5"/>
+      <stop offset="1" stop-color="#7C3AED"/>
+    </linearGradient>
+  </defs>
+  <path
+    d="M32 14c-8 0-14 3.2-14 7.2V46c0 3.2 5.2 5.8 14 5.8s14-2.6 14-5.8V21.2C46 17.2 40 14 32 14Z"
+    fill="#fff"
+    fill-opacity=".18"
+  />
+  <path
+    d="M32 14v38M18 21.2C18 25.2 24 28 32 28s14-2.8 14-6.8M18 46c0 3.2 6.2 5.8 14 5.8s14-2.6 14-5.8"
+    stroke="#fff"
+    stroke-width="2.4"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+  <path
+    d="M27 34.5c1.8-2.2 4.6-2.8 6.8-1.2 2.4 1.7 1.6 4.8-1 5.6-2.2.6-3.4 2.2-3.2 4.2.2 2.2 2.8 2.4 4.4 5.2 3.6"
+    stroke="#fff"
+    stroke-width="2.6"
+    stroke-linecap="round"
+    fill="none"
+  />
+  <path
+    d="M40 18 44 14l4 4"
+    stroke="#FDE68A"
+    stroke-width="2"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  />
+</svg>

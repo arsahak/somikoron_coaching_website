@@ -16,9 +16,13 @@ const notoBengali = Noto_Sans_Bengali({
 });
 
 export const metadata: Metadata = {
-  title: "স্মার্ট কোচিং | Smart Coaching Center",
+  title: "সমিকরণ কোচিং | Somikoron Coaching",
   description:
     "এসএসসি, এইচএসসি ও ভর্তি প্রস্তুতির সেরা কোচিং সেন্টার — অভিজ্ঞ শিক্ষক, মক টেস্ট ও ডিজিটাল ট্র্যাকিং।",
+  icons: {
+    icon: [{ url: "/images/somikoron-logo.svg", type: "image/svg+xml" }],
+    apple: [{ url: "/images/somikoron-logo.svg", type: "image/svg+xml" }],
+  },
 };
 
 export default function RootLayout({

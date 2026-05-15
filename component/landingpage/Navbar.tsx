@@ -3,8 +3,9 @@
 import { useTheme } from "@/lib/ThemeContext";
 import { useTranslation } from "@/lib/useTranslation";
 import { AnimatePresence, motion } from "framer-motion";
-import { GraduationCap, Languages, Menu, Moon, Sun, X } from "lucide-react";
+import { Languages, Menu, Moon, Sun, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { BrandLogo } from "./ui/BrandLogo";
 import { SECTION_CONTAINER } from "./ui/sectionStyles";
 const navLinks = [
   { href: "#home", key: "navHome" as const },
@@ -44,14 +45,8 @@ export function Navbar() {
       <nav
         className={`mx-auto flex h-16 items-center justify-between ${SECTION_CONTAINER}`}
       >
-        <a
-          href="#home"
-          className="flex items-center gap-2 font-bold text-zinc-900 dark:text-white"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-indigo-600 text-white">
-            <GraduationCap className="h-5 w-5" />
-          </span>
-          <span className="text-lg">{tr("brand")}</span>
+        <a href="#home" className="shrink-0">
+          <BrandLogo size="md" />
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

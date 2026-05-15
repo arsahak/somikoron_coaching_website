@@ -1,18 +1,18 @@
 "use client";
 
+import { useLanguage } from "@/lib/LanguageContext";
+import type { TranslationKey } from "@/lib/translations";
+import { useTranslation } from "@/lib/useTranslation";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
-  Sparkles,
-  GraduationCap,
+  Award,
   BookOpen,
   ClipboardCheck,
+  GraduationCap,
   LineChart,
-  Award,
+  Sparkles,
 } from "lucide-react";
-import { useTranslation } from "@/lib/useTranslation";
-import { useLanguage } from "@/lib/LanguageContext";
-import type { TranslationKey } from "@/lib/translations";
 import {
   SECTION_CONTAINER,
   SECTION_GAP,
@@ -64,7 +64,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden pt-20 pb-8 sm:pt-24 sm:pb-16"
+      className="relative overflow-hidden pt-20 pb-8 sm:pt-32 sm:pb-20"
     >
       <div
         className="pointer-events-none absolute -top-40 right-0 h-[500px] w-[500px] rounded-full bg-indigo-500/20 blur-3xl"
@@ -180,7 +180,10 @@ export function Hero() {
               {/* Center */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="flex h-28 w-28 items-center justify-center rounded-full bg-gradient-to-br from-indigo-600 to-violet-600 shadow-xl shadow-indigo-500/40">
-                  <GraduationCap className="h-14 w-14 text-white" strokeWidth={1.5} />
+                  <GraduationCap
+                    className="h-14 w-14 text-white"
+                    strokeWidth={1.5}
+                  />
                 </div>
               </div>
 

@@ -3,7 +3,6 @@
 import type { ComponentType, ReactNode } from "react";
 import { motion } from "framer-motion";
 import {
-  GraduationCap,
   MapPin,
   Phone,
   Mail,
@@ -15,6 +14,7 @@ import {
   MessageCircle,
 } from "lucide-react";
 import { useTranslation } from "@/lib/useTranslation";
+import { BrandLogo } from "./ui/BrandLogo";
 import {
   SECTION_CONTAINER,
   SECTION_GAP,
@@ -104,14 +104,8 @@ export function Footer() {
           <motion.div className={`grid sm:grid-cols-2 lg:grid-cols-12 ${SECTION_GAP_LG}`}>
             {/* Brand */}
             <div className="lg:col-span-4">
-              <a
-                href="#home"
-                className="inline-flex items-center gap-2.5 font-bold text-zinc-900 dark:text-white"
-              >
-                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-lg shadow-indigo-500/30">
-                  <GraduationCap className="h-5 w-5" />
-                </span>
-                <span className="text-lg">{tr("brand")}</span>
+              <a href="#home" className="inline-flex">
+                <BrandLogo size="lg" />
               </a>
               <p className="mt-2 text-sm font-medium text-indigo-600 dark:text-indigo-400">
                 {tr("footerTagline")}
