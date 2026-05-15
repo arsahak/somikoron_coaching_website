@@ -20,6 +20,9 @@
 # production
 /build
 
+# inquiry form submissions (local dev)
+/data
+
 # misc
 .DS_Store
 *.pem
