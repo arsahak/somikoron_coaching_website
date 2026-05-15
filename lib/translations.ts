@@ -208,6 +208,8 @@ export const translations = {
     formSuccess: "আবেদন সফলভাবে জমা হয়েছে! শীঘ্রই যোগাযোগ করা হবে।",
     formError: "কিছু ভুল হয়েছে। আবার চেষ্টা করুন।",
     formRequired: "এই ঘরটি পূরণ করুন",
+    formPhoneInvalid: "সঠিক মোবাইল নম্বর দিন (০১XXXXXXXXX)",
+    formEmailInvalid: "সঠিক ইমেইল ঠিকানা দিন",
     footerTagline: "শিক্ষার মানে নতুন মাত্রা",
     footerDesc:
       "২০১৫ সাল থেকে এসএসসি, এইচএসসি ও ভর্তি প্রস্তুতিতে বিশ্বস্ত নাম। ছোট ব্যাচ, মক টেস্ট ও ডিজিটাল রিপোর্টিং।",
@@ -435,6 +437,8 @@ export const translations = {
     formSuccess: "Application submitted! We'll contact you soon.",
     formError: "Something went wrong. Please try again.",
     formRequired: "This field is required",
+    formPhoneInvalid: "Enter a valid mobile number (01XXXXXXXXX)",
+    formEmailInvalid: "Enter a valid email address",
     footerTagline: "A new dimension in quality education",
     footerDesc:
       "Trusted for SSC, HSC & admission prep since 2015. Small batches, mock tests & digital reporting.",

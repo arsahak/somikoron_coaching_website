@@ -1,6 +1,4 @@
 import { NextResponse } from "next/server";
-import { writeFile, mkdir, readFile } from "fs/promises";
-import path from "path";
 
 export type InquiryPayload = {
   studentName: string;
@@ -11,8 +9,12 @@ export type InquiryPayload = {
   message?: string;
 };
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const DATA_FILE = path.join(DATA_DIR, "inquiries.json");
+const BACKEND_URL =
+  process.env.BACKEND_API_URL ||
+  process.env.NEXT_PUBLIC_API_URL ||
+  "http://localhost:5000";
+
+const INQUIRY_SECRET = process.env.INQUIRY_API_SECRET || "";
 
 export async function POST(request: Request) {
   try {
@@ -20,32 +22,44 @@ export async function POST(request: Request) {
 
     if (!body.studentName || !body.parentName || !body.phone || !body.desiredClass) {
       return NextResponse.json(
-        { error: "Missing required fields" },
+        { success: false, error: "Missing required fields" },
         { status: 400 }
       );
     }
 
-    const entry = {
-      ...body,
-      id: crypto.randomUUID(),
-      createdAt: new Date().toISOString(),
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
     };
-
-    await mkdir(DATA_DIR, { recursive: true });
-
-    let existing: typeof entry[] = [];
-    try {
-      const raw = await readFile(DATA_FILE, "utf-8");
-      existing = JSON.parse(raw);
-    } catch {
-      existing = [];
+    if (INQUIRY_SECRET) {
+      headers["X-Inquiry-Secret"] = INQUIRY_SECRET;
     }
 
-    existing.push(entry);
-    await writeFile(DATA_FILE, JSON.stringify(existing, null, 2), "utf-8");
+    const res = await fetch(`${BACKEND_URL}/api/inquiry/public`, {
+      method: "POST",
+      headers,
+      body: JSON.stringify(body),
+    });
 
-    return NextResponse.json({ success: true, id: entry.id });
+    const data = await res.json().catch(() => ({}));
+
+    if (!res.ok) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: data.message || "Failed to submit inquiry",
+        },
+        { status: res.status }
+      );
+    }
+
+    return NextResponse.json({
+      success: true,
+      id: data.data?.id,
+    });
   } catch {
-    return NextResponse.json({ error: "Server error" }, { status: 500 });
+    return NextResponse.json(
+      { success: false, error: "Server error" },
+      { status: 500 }
+    );
   }
 }
